@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>今天李金璇吃什么</title>
+    <style>
+        @keyframes cardAnimation {
+            0% { transform: scale(0); opacity: 0; }
+            50% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .result-card {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #fff;
+            border: 2px solid #333;
+            border-radius: 8px;
+            animation: cardAnimation 1s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>今天李金璇吃什么？</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">首页</a></li>
+            <li><a href="#" onclick="showContact()">联系方式</a></li>
+            <li><a href="#" onclick="showAboutUs()">关于我们</a></li>
+        </ul>
+    </nav>
+
+    <section>
+        <h2>内容部分</h2>
+        <p>这是一个简单的网页示例。你可以在这里添加你自己的内容。</p>
+    </section>
+
+    <button onclick="animateCard()">今天吃什么</button>
+
+    <div id="resultCard" class="result-card"></div>
+
+    <footer>
+        <p>&copy; 2023 今天李金璇吃什么</p>
+    </footer>
+
+    <script>
+        function showContact() {
+            alert("联系方式：曹东旭 15994161231");
+        }
+
+        function showAboutUs() {
+            alert("关于我们：666");
+        }
+
+        function decideWhatToEat() {
+            var options = ["麦门", "泡面", "奥力给","主校餐厅","海底捞","烤肉","涮肉","cdx"];
+            var randomIndex = Math.floor(Math.random() * options.length);
+            var selectedOption = options[randomIndex];
+            return selectedOption;
+        }
+
+        function animateCard() {
+            var resultCard = document.getElementById("resultCard");
+            resultCard.innerHTML = "今天李金璇吃：" + decideWhatToEat();
+            resultCard.style.display = "block";
+            setTimeout(function() {
+                resultCard.style.display = "none";
+            }, 2000);
+        }
+    </script>
+
+</body>
+</html>

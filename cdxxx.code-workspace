@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"search-online.show-status-bar": true,
+		"search-online.search-engine": "Bing"
+	}
+}
